@@ -1,0 +1,132 @@
+/*create variables*/
+:root{ 
+    --main-radius: 5px;
+    --main-padding: 5px;
+}
+
+/*Create grid*/
+.container{
+    font-weight: 800;
+    font-size: 1EM;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 0.05 fr 1.85 fr 1 fr 1fr;
+    grid-gap: 0.2rem;
+    grid-template-areas:
+    "nav nav nav nav"
+    "sidebar sidebar papers papers"
+    "sidebar sidebar papers papers"
+    "footer footer footer footer"
+}
+
+/*Styling for navigation menu*/
+nav{
+    background-color: bisque;
+    grid-area: nav;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+nav a{
+    float: left;
+    color: black;
+    text-decoration: none;
+    margin-right: 20px;
+}
+
+nav a:hover{
+    background-color: #f0932b;
+    color: black;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/*Styling for Papers section*/
+.papers {
+    background: rgb(165, 165, 251);
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center; 
+    grid-area: papers; 
+    padding: 20px; 
+    border-radius: var(--main-radius); 
+}
+
+/*Styling for each paper block*/
+.paper {
+    background: #F0FFFF;
+    margin: 10px 0;
+    padding: var(--main-padding);
+    border-radius: var(--main-radius); 
+    width: 100%; 
+    display: flex;
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+}
+
+.paper img {
+    width: 80px;
+    height: 80px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.paper h3 {
+    font-size: 18px; 
+    margin: 0; 
+}
+
+/*Styling for sidebar*/
+#sidebar {
+    grid-area: sidebar;
+    background: url(quantum.jpg);
+    display: flex;
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+    color: red;
+}
+
+#sidebar img {
+    height: 80%;
+    width: 80%;
+    border-radius: 50%; 
+    margin-bottom: 10px; 
+}
+
+#sidebar h3 {
+    font-size: 18px; 
+    margin: 0; 
+}
+
+img {
+    height: 70%;
+    width: 70%;
+    margin-bottom: 200px;
+    margin-top: 50px;
+    border-radius: 50%;
+}
+
+/*Styling for Footer section*/
+footer{
+    grid-area: footer;
+    background-color: bisque;
+    text-align: center;
+    font-size: 16px;
+}
+
+/*Mobile version*/
+@media only screen and (max-width:500px){
+    .container{
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.05fr 1fr 1fr 0.05fr;
+        grid-template-areas:
+        "nav"
+        "sidebar"
+        "papers"
+        "footer";
+        text-align: center;
+    }
+}
